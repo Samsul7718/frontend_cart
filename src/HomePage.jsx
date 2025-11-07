@@ -1,6 +1,7 @@
 import React from 'react'
 import { useEffect } from 'react'
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
 
 const HomePage = () => {
     const [products, setProducts] = useState([])
@@ -26,7 +27,10 @@ const HomePage = () => {
                 <p>Price: {product.price}</p>
 
                 </div>
+                <Link
+                  to="/cart">
                 <button className='bg-green-400 rounded-md shadow-md p-3'>Add to cart</button>
+                </Link>
                 </div>
             </li>
         ))}

@@ -1,5 +1,6 @@
 import {BrowserRouter as Router, Routes, Route } from "react-router-dom"
 import HomePage from "./HomePage"
+import CartPage from "./CartPage"
 
 
 function App() {
