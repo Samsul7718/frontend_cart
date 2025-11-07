@@ -13,15 +13,13 @@ const HomePage = () => {
     },[])
   return (
     <div>
-        <div className='flex items-center justify-center'>
-          <div>
-
-          </div>
+        <div className='flex items-center justify-center p-10'>
+          <div></div>
         <h1 className='text-2xl font-bold'>Home Page</h1>
         </div>
         {products.map((product)=>(
             <li key={product.id}>
-                <div className='flex flex-row items-center gap-3 justify-between p-5'>
+                <div className='bg-sky-50 border flex flex-row items-center gap-3 justify-between p-5'>
                 <img src={product.imageUrl} alt={product.name} width="100"/>    
                 <div>
                 <h2>{product.name}</h2>
