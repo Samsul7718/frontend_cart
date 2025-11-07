@@ -1,3 +1,4 @@
+import {BrowserRouter as Router, Routes, Route } from "react-router-dom"
 import HomePage from "./HomePage"
 
 
@@ -5,7 +6,13 @@ function App() {
   
 
   return (
-   <HomePage/>
+    <Router>
+      <Routes>
+        <Route path="/" element={<HomePage/>}/>
+        <Route path="/cart" element={<CartPage/>}/>
+      </Routes>
+    </Router>
+  
   )
 }
 
