@@ -1,10 +1,13 @@
 import React from 'react'
 import { useEffect } from 'react'
 import { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { useCart } from './context/CartContext.jsx'
+// import { Link } from 'react-router-dom'
+
 
 const HomePage = () => {
     const [products, setProducts] = useState([])
+    const {addToCart}=useCart();
 
     useEffect(()=>{
         fetch("http://localhost:3000/api/products")
@@ -12,6 +15,10 @@ const HomePage = () => {
         .then((data)=>setProducts(data))
         .catch((err)=>console.log(err))
     },[])
+
+    const handleCartProduct=(product)=>{
+           addToCart(product);
+    }
   return (
     <div>
         <div className='flex items-center justify-center p-10'>
@@ -27,10 +34,13 @@ const HomePage = () => {
                 <p>Price: {product.price}</p>
 
                 </div>
-                <Link
-                  to="/cart">
-                <button className='bg-green-400 rounded-md shadow-md p-3'>Add to cart</button>
-                </Link>
+              
+                <button 
+                 onclick={()=>handleCartProduct(product)}
+                className='bg-green-400 rounded-md shadow-md p-3'>
+                  Add to cart
+                  </button>
+                
                 </div>
             </li>
         ))}
