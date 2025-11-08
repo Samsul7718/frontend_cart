@@ -2,12 +2,14 @@ import React from 'react'
 import { useEffect } from 'react'
 import { useState } from 'react'
 import { useCart } from './context/CartContext.jsx'
+import {useNavigate} from 'react-router-dom'
 // import { Link } from 'react-router-dom'
 
 
 const HomePage = () => {
     const [products, setProducts] = useState([])
     const {addToCart}=useCart();
+    const navigate=useNavigate();
 
     useEffect(()=>{
         fetch("http://localhost:3000/api/products")
@@ -18,6 +20,7 @@ const HomePage = () => {
 
     const handleCartProduct=(product)=>{
            addToCart(product);
+           navigate('/cart');
     }
   return (
     <div>
@@ -34,9 +37,8 @@ const HomePage = () => {
                 <p>Price: {product.price}</p>
 
                 </div>
-              
                 <button 
-                 onclick={()=>handleCartProduct(product)}
+                 onClick={()=>handleCartProduct(product)}
                 className='bg-green-400 rounded-md shadow-md p-3'>
                   Add to cart
                   </button>
