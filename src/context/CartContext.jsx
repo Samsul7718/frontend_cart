@@ -22,8 +22,11 @@ export const CartProvider=({children})=>{
     const decQty=(id)=>{
         setCart((prev)=>prev.map((p)=>p.id===id?{...p,qty:p.qty>1?p.qty-1:1}:p));
     }
+    const remove=(id)=>{
+        setCart((prev)=>prev.filter(p=>p.id !==id));
+    }
     return(
-        <CartContext.Provider value={{addToCart,cart,incQty,decQty}}>
+        <CartContext.Provider value={{addToCart,cart,incQty,decQty,remove}}>
             {children}
         </CartContext.Provider>
     )
