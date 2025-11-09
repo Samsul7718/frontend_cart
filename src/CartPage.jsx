@@ -3,6 +3,7 @@ import { useCart } from './context/CartContext.jsx'
 
 const CartPage = () => {
   const {cart}=useCart();
+  const total=cart.reduce((sum,product)=>sum+product.price*(product.qty || 1),0);
   return (
     <div>
       <div className='flex items-center justify-center p-5'>
@@ -12,13 +13,19 @@ const CartPage = () => {
       
         {cart.map((product)=>(
           <li key={product.id}>
-            <div>
+            <div className="bg-sky-50 border flex flex-row items-center gap-10 justify-between p-5">
               <img src={product.imageUrl} alt="product.name" width="100" />
 
-          <div>
+            <div>
           <h4>{product.name}</h4>
-          <p>Price: INR {product.price} </p>
-          </div>
+          <p>INR {product.price} </p>
+            </div>
+            <div className='flex flex-row items-center gap-3' >
+              <button>-</button>
+              <span>{product.qty}</span>
+              <button>+</button>
+              <button>remove</button>
+            </div>
 
         </div>
           </li>

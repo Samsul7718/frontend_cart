@@ -16,8 +16,11 @@ export const CartProvider=({children})=>{
             setCart(prev=>[...prev,{...product,qty:1}])
         }
     }
+    const incQty=(id)=>{
+        setCart((prev)=>prev.map((p)=>p.id===id?{...p,qty:p.qty+1}:p));
+    }
     return(
-        <CartContext.Provider value={{addToCart,cart,}}>
+        <CartContext.Provider value={{addToCart,cart,incQty}}>
             {children}
         </CartContext.Provider>
     )
