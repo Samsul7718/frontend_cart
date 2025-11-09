@@ -2,7 +2,7 @@ import React from 'react'
 import { useCart } from './context/CartContext.jsx'
 
 const CartPage = () => {
-  const {cart}=useCart();
+  const {cart,incQty,decQty}=useCart();
   const total=cart.reduce((sum,product)=>sum+product.price*(product.qty || 1),0);
   return (
     <div>
@@ -21,9 +21,9 @@ const CartPage = () => {
           <p>INR {product.price} </p>
             </div>
             <div className='flex flex-row items-center gap-3' >
-              <button>-</button>
+              <button onClick={()=>decQty(product.id)}>-</button>
               <span>{product.qty}</span>
-              <button>+</button>
+              <button onClick={()=>incQty(product.id)}>+</button>
               <button>remove</button>
             </div>
 

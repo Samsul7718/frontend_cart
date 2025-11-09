@@ -19,8 +19,11 @@ export const CartProvider=({children})=>{
     const incQty=(id)=>{
         setCart((prev)=>prev.map((p)=>p.id===id?{...p,qty:p.qty+1}:p));
     }
+    const decQty=(id)=>{
+        setCart((prev)=>prev.map((p)=>p.id===id?{...p,qty:p.qty>1?p.qty-1:1}:p));
+    }
     return(
-        <CartContext.Provider value={{addToCart,cart,incQty}}>
+        <CartContext.Provider value={{addToCart,cart,incQty,decQty}}>
             {children}
         </CartContext.Provider>
     )
