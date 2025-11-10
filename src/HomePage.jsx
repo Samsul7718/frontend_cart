@@ -2,7 +2,7 @@ import React from 'react'
 import { useEffect } from 'react'
 import { useState } from 'react'
 import { useCart } from './context/CartContext.jsx'
-import {useNavigate} from 'react-router-dom'
+import {Link, useNavigate} from 'react-router-dom'
 // import { Link } from 'react-router-dom'
 
 
@@ -24,9 +24,12 @@ const HomePage = () => {
     }
   return (
     <div>
-        <div className='flex items-center justify-center p-10'>
+        <div className='flex items-center justify-center p-10 gap-40'>
           <div></div>
         <h1 className='text-2xl font-bold'>Home Page</h1>
+        <Link to="/cart">
+        <button className='bg-purple-300 p-3 shadow-md rounded-md '>Cart</button>
+        </Link>
         </div>
         {products.map((product)=>(
             <li key={product.id}>
