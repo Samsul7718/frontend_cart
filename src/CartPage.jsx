@@ -28,6 +28,10 @@ const CartPage = () => {
             </div>
 
         </div>
+        <div className='flex items-center justify-center gap-5 p-5'>
+          <h3 className='text-bold-400 text-gray-500 font-bold'>Total: INR {total}</h3>
+          <button className='bg-green-500 text-white p-4 rounded-md shadow-md '>checkout</button>
+        </div>
           </li>
 
         ))}
