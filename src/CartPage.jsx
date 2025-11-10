@@ -10,6 +10,10 @@ const CartPage = () => {
         <div></div>
         <h1 className='font-bold text-2xl'>Cart Page</h1>
       </div>
+      {cart.length===0?(
+        <h3 className='text-center text-gray-500 font-bold'>Cart is empty</h3>
+      ):(
+        <div className='space-y-5'>
       
         {cart.map((product)=>(
           <li key={product.id}>
@@ -35,7 +39,8 @@ const CartPage = () => {
           <h3 className='text-bold-400 text-gray-500 font-bold'>Total: INR {total}</h3>
           <button className='bg-green-500 text-white p-4 rounded-md shadow-md '>checkout</button>
         </div>
-      
+    </div>
+      )}
     </div>
   )
 }
