@@ -41,6 +41,8 @@ const CartPage = () => {
           <Link to ="/checkout">
           <button className='bg-green-500 text-white p-4 rounded-md shadow-md '>checkout</button>
           </Link>
+          {console.log("order",total)}
+          
         </div>
     </div>
       )}
