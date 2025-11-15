@@ -25,7 +25,7 @@ const Checkout = () => {
   
 
   var options = {
-    "key": "rzp_test_RaIsMYYAo7K5Fp", // Enter the Key ID generated from the Dashboard
+    "key": "rzp_test_RaIsMYYAo7K5Fp", 
     "amount":"", // Amount 
     "currency": "INR",
     "name": "shop mate", // business name
@@ -45,6 +45,9 @@ const Checkout = () => {
         });
       const validateJson=await validateRes.json();
          console.log("validateJson:", validateJson);
+     
+          alert("Payment Successful");
+          console.log("Full validated order:", validateJson.updatedOrder);
     },
     "prefill": { // customer's contact especially their phone number
         "name": "samsul alam", // customer's name
@@ -56,7 +59,7 @@ const Checkout = () => {
     },
     "theme": {
         "color": "#3399cc"
-    }
+    },
 };
 var rzp1 = new window.Razorpay(options);
 rzp1.on('payment.failed', function (response){
