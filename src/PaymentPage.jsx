@@ -5,7 +5,7 @@ const PaymentPage = () => {
     <div>
       <h3>PaymentPage</h3>
 
-
+        <p>payment successfully completed</p>
     </div>
   )
 }
