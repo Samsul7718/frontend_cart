@@ -33,6 +33,7 @@ const Checkout = () => {
     "image": "https://example.com/your_logo",
     "order_id": order.id, // Pass the `id` obtained in the response of Step 1
     "handler": async function (response){
+      console.log("Razorpay Response:", response);
         const body={
           ...response,
         };
@@ -45,7 +46,6 @@ const Checkout = () => {
         });
       const validateJson=await validateRes.json();
          console.log("validateJson:", validateJson);
-     
           alert("Payment Successful");
           console.log("Full validated order:", validateJson.updatedOrder);
     },
