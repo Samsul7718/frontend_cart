@@ -9,6 +9,7 @@ const PaymentPage = () => {
         <p>get ready for order
         delivery...
         </p>
+        <button>get order</button>
     </div>
   )
 }
