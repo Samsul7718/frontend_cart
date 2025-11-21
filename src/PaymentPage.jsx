@@ -11,7 +11,7 @@ const PaymentPage = () => {
         </p>
         <div>
         <button>get order</button>
-
+        <button>add to wishlist</button>
         </div>
 
     </div>
