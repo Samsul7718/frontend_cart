@@ -9,6 +9,7 @@ const PaymentPage = () => {
         <p>get ready for order
         delivery...
         </p>
+        <span>you have ordered total 4 items</span>
         <div>
         <button>get order</button>
         <button>add to wishlist</button>
